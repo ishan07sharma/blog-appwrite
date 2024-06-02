@@ -15,14 +15,15 @@ function Home() {
 
     useEffect(() => {
         
-       
-            
+    
+            if(userData){
             appwriteService.getPosts(Query.equal("userId",userData.$id))
             .then((posts) => {
                 if (posts) {
                     setPosts(posts.documents)
                 }
             })
+        }
             
         
    
